@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Text Validator and Formatter</title>
+  <link href='https://fonts.googleapis.com/css?family=Doto' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+  <div class="container">
+    <h1>Smart Text Validator and Formatter</h1>
+    
+    <textarea id="inputText" placeholder="Enter text here"></textarea>
+
+    <!-- Validation Options -->
+    <h3>Validation Options</h3>
+    <label><input type="radio" id="checkPassword" name="valid"> Password Strength</label>
+    <label><input type="radio" id="checkUsername" name="valid"> Username Rules</label>
+    
+    <!-- Cleaning and Formatting Options -->
+    <h3>Formatting Options</h3>
+<select id="formatOption">
+  <option value="uppercase">Convert to Uppercase</option>
+  <option value="lowercase">Convert to Lowercase</option>
+  <option value="trim">Trim Whitespace</option>
+  <option value="removeSpecial">Remove Special Characters</option>
+  <option value="capitalizeEachWord">Capitalize Each Word</option>
+  <option value="sentenceCase">Sentence Case</option>
+  <option value="snakeCase">Snake Case</option>
+  <option value="kebabCase">Kebab Case</option>
+  <option value="removeDigits">Remove Digits</option>
+  <option value="removeAllWhitespace">Remove All Whitespace</option>
+  <option value="reverseText">Reverse Text</option>
+</select>
+
+
+    <button onclick="processText()">Process Text</button>
+
+    <h3>Feedback</h3>
+    <div id="feedback"></div>
+    
+    <h3>Formatted Text:</h3>
+    <div id="result"></div>
+  </div><div class="wave"></div>
+  <script src="script.js"></script>
+</body>
+</html>

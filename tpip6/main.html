@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Writing Webpage</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family:cursive;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-image:linear-gradient(to bottom,rgb(50, 50, 163),rgb(158, 51, 165),pink);
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    input, textarea, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #6c63ff;
+      box-shadow: 0 0 4px #6c63ff;
+    }
+
+    button {
+      background: #6c63ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #5750d4;
+      transform: scale(1.025);
+    }
+
+    .message {
+      margin: 20px 0;
+      color: green;
+      font-weight: bold;
+    }
+
+    .blog-list {
+      margin: 20px 0;
+    }
+
+    .blog-card {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+
+    .scroll-message {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog Writing Webpage</h1>
+    <p>Write and save your blogs, and view them instantly!</p>
+  </header>
+
+  <div class="container">
+    <h2>Write Your Blog</h2>
+    <form id="blogForm">
+      <label for="blogTitle">Blog Title:</label>
+      <input type="text" id="blogTitle" placeholder="Enter your blog title">
+
+      <label for="blogContent">Blog Content:</label>
+      <textarea id="blogContent" rows="6" placeholder="Write your blog content here..."></textarea>
+
+      <button type="submit">Submit Blog</button>
+      <button type="button" id="resetBtn">Reset</button>
+    </form>
+
+    <div class="message" id="message"></div>
+
+    <h2>All Blogs</h2>
+    <div class="blog-list" id="blogList"></div>
+  </div>
+
+  <div class="scroll-message" id="scrollMessage">
+    You're scrolling the page!
+  </div>
+
+  <script>
+    // Elements
+    const blogForm = document.getElementById('blogForm');
+    const blogTitleInput = document.getElementById('blogTitle');
+    const blogContentInput = document.getElementById('blogContent');
+    const resetBtn = document.getElementById('resetBtn');
+    const messageDiv = document.getElementById('message');
+    const blogList = document.getElementById('blogList');
+    const scrollMessage = document.getElementById('scrollMessage');
+
+    // Save to Local Storage
+    function saveBlogToLocalStorage(title, content) {
+      const totalBlogs = localStorage.getItem('blogCount') || 0;
+      const nextBlogIndex = parseInt(totalBlogs) + 1;
+
+      localStorage.setItem(`blogTitle${nextBlogIndex}`, title);
+      localStorage.setItem(`blogContent${nextBlogIndex}`, content);
+      localStorage.setItem('blogCount', nextBlogIndex);
+    }
+
+    // Load Blogs
+    function loadBlogs() {
+      blogList.innerHTML = '';
+      const totalBlogs = localStorage.getItem('blogCount') || 0;
+
+      for (let i = 1; i <= totalBlogs; i++) {
+        const title = localStorage.getItem(`blogTitle${i}`);
+        const content = localStorage.getItem(`blogContent${i}`);
+
+        if (title && content) {
+          blogList.innerHTML += `
+            <div class="blog-card">
+              <h3>${title}</h3>
+              <p>${content}</p>
+            </div>
+          `;
+        }
+      }
+    }
+
+    // Form Submit Event
+    blogForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = blogTitleInput.value.trim();
+      const content = blogContentInput.value.trim();
+
+      if (!title || !content) {
+        messageDiv.textContent = "Both title and content are required!";
+        messageDiv.style.color = "red";
+        return;
+      }
+
+      saveBlogToLocalStorage(title, content);
+      sessionStorage.setItem('currentBlogTitle', title);
+      sessionStorage.setItem('currentBlogContent', content);
+
+      messageDiv.textContent = "Blog submitted successfully!";
+      messageDiv.style.color = "green";
+
+      blogForm.reset();
+      loadBlogs();
+    });
+
+    // Reset Button Event
+    resetBtn.addEventListener('click', () => {
+      blogForm.reset();
+      sessionStorage.removeItem('currentBlogTitle');
+      sessionStorage.removeItem('currentBlogContent');
+      messageDiv.textContent = "Form cleared.";
+      messageDiv.style.color = "green";
+    });
+
+    // Scroll Event
+    window.addEventListener('scroll', () => {
+      scrollMessage.style.display = "block";
+      setTimeout(() => {
+        scrollMessage.style.display = "none";
+      }, 1000);
+    });
+
+    // Page Load Event
+    window.addEventListener('load', () => {
+      const currentBlogTitle = sessionStorage.getItem('currentBlogTitle');
+      const currentBlogContent = sessionStorage.getItem('currentBlogContent');
+
+      if (currentBlogTitle) blogTitleInput.value = currentBlogTitle;
+      if (currentBlogContent) blogContentInput.value = currentBlogContent;
+
+      loadBlogs();
+    });
+
+    // Resize Event
+    window.addEventListener('resize', () => {
+      console.log(`Window resized to: ${window.innerWidth}x${window.innerHeight}`);
+    });
+  </script>
+</body>
+</html>

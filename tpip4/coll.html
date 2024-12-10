@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet - Collections</title>
+    <link rel="stylesheet" href="collections.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <img src="closetlogo.jpeg" width="250px" alt="">
+          <!-- <a class="navbar-brand text-light" href="#">Fashion Hub</a> -->
+          <button class="navbar-toggler btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon btn btn-light"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="1.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="coll.html">Collections</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Collections Section -->
+    <section class="product-collection">
+        <h2>Our Latest Collection</h2>
+        <div class="collection-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.g1-Ykm5wXOARIfGZYjHVoAHaHa?rs=1&pid=ImgDetMain" alt="Product 1">
+                <div class="product-info">
+                    <h3>Casual Denim Jacket</h3>
+                    <p class="price">$89.99</p>
+                    <p class="description">A timeless piece perfect for layering in any season. Made from premium denim.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.IvBziSD5dLX1iNYbI9TWTgHaHa?rs=1&pid=ImgDetMain" alt="Product 2">
+                <div class="product-info">
+                    <h3>Elegant Silk Dress</h3>
+                    <p class="price">$149.99</p>
+                    <p class="description">Crafted from fine silk, this dress flows beautifully and adds a touch of luxury.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://cdn.shopify.com/s/files/1/0009/5895/5638/files/16_6801e9c9-81c6-449f-ab80-f9a4fa5eab41_1024x.jpg?v=1539337010" alt="Product 3">
+                <div class="product-info">
+                    <h3>Leather Handbag</h3>
+                    <p class="price">$199.99</p>
+                    <p class="description">A stylish leather handbag with gold accents, perfect for both day and evening wear.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://i.pinimg.com/originals/f4/87/46/f4874688925fbfa79048443792c15b3f.jpg" alt="Product 4">
+                <div class="product-info">
+                    <h3>Classic White Sneakers</h3>
+                    <p class="price">$79.99</p>
+                    <p class="description">Comfortable and versatile white sneakers that complement any outfit.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="floral.jpeg" alt="Product 5">
+                <div class="product-info">
+                    <h3>Floral Print Maxi Dress</h3>
+                    <p class="price">$189.99</p>
+                    <p class="description">A flowy, ankle-length dress featuring a vibrant floral pattern, perfect for spring and summer occasions.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.FlX-gX-UG4isM7QsdsZHcAHaG_?rs=1&pid=ImgDetMain" alt="Product 6">
+                <div class="product-info">
+                    <h3>Oversized Wool Coat</h3>
+                    <p class="price">$379.99</p>
+                    <p class="description">Stay warm and stylish with this cozy, oversized wool coat, designed for effortless layering.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.riverisland.com/is/image/RiverIsland/black-faux-leather-biker-jacket_396753_main?$productImageLarge$" alt="Product 7">
+                <div class="product-info">
+                    <h3>Faux Leather Biker Jacket</h3>
+                    <p class="price">$129.99</p>
+                    <p class="description">A chic, edgy faux leather jacket with zip detailing, ideal for adding a rebellious touch to any outfit.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://www.sydnestyle.com/wp-content/uploads/2016/04/Sydne-Summer-gives-tips-on-how-to-cuff-jeans-and-look-cute-600x539.jpg" alt="Product 8">
+                <div class="product-info">
+                    <h3>High-Waisted Skinny Jeans</h3>
+                    <p class="price">$89.99</p>
+                    <p class="description">Classic high-rise skinny jeans that hug your curves, offering both comfort and style for everyday wear.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/98/0e/ef/980eef6d1c2652b887b1c571ddbb55c1.jpg" alt="Product 9">
+                <div class="product-info">
+                    <h3>Satin Midi Skirt</h3>
+                    <p class="price">$44.99</p>
+                    <p class="description">A luxurious satin midi skirt with a soft sheen, offering an elegant and polished look for any occasion.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.4ijYX5T72kmlkXe6k8ibvwAAAA?rs=1&pid=ImgDetMain" alt="Product 10">
+                <div class="product-info">
+                    <h3>Chunky Knit Sweater</h3>
+                    <p class="price">$389.99</p>
+                    <p class="description">A relaxed, oversized sweater with a chunky knit texture, perfect for cozy winter days.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.w83YNhcvv2s2bOpB50jtjwAAAA?rs=1&pid=ImgDetMain" alt="Product 11">
+                <div class="product-info">
+                    <h3>Strappy Heeled Sandals</h3>
+                    <p class="price">$29.99</p>
+                    <p class="description">Sleek and minimalist, these strappy heeled sandals are perfect for pairing with both casual and dressy outfits.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/83/34/21/833421fc42b54644c0594c7422593445.jpg" alt="Product 12">
+                <div class="product-info">
+                    <h3>Embroidered Boho Blouse</h3>
+                    <p class="price">$63.99</p>
+                    <p class="description">A lightweight boho blouse with intricate embroidery, offering a relaxed and free-spirited vibe.</p>
+                    <button onclick="addToCart('Elegant Silk Dress', 149.99)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Closet. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

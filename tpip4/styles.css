@@ -1,0 +1,242 @@
+/* Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgb(15, 15, 15);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4081;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://images.squarespace-cdn.com/content/v1/50aa7079e4b040d142112688/1536261171051-QWONOH7EQHE2WY3UCWGX/JakeHicksPhotography+(1+of+11)+set+combo.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    animation: zoom-in-zoom-out 5s ease ;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 2s ease-out;
+}
+
+.cta-btn {
+    background-color: #ff4081;
+    color: white;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 2.5s ease-out;
+}
+
+.cta-btn:hover {
+    background-color: #ff7a9b;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+      scale: 70%;
+    }
+    /* 25%{
+        scale:175%;
+    }
+    50% {
+      scale: 150%;
+    }
+    75%{
+        scale:125%; */
+    /* } */
+    100% {
+      scale: 100%;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Collection Section */
+.collection {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.collection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+    padding: 50px 0;
+    background-color: white;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+
+    box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 40px;
+    font-size: 1.2rem;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    color: #555;
+    
+}
+.about p:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    animation: slideInLeft 2.5s ease;
+}
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+    background-color: #ff4081;
+    color: white;
+    padding: 30px;
+    /* text-align: center; */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    /* animation: slideInRight 1.5s ease; */
+}
+.c-info:hover{
+    animation: slideInRight 1.5s ease;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
